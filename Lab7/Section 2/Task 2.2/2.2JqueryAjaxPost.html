@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GET and POST</title>
+</head>
+<body>
+<p id ="p">Here</p>
+<input type="button" id ="submit" value="GET">
+<script>src="https://code.jquery.com/jquery-3.5.1.js"</script>
+<script>
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            $.ajax({
+                type:'POST',
+                url:'Task 2.2.php',
+                success:function (result) {
+                    var first = JSON.parse(result);
+                    $("#p").text(first.city);
+                }
+            })
+        })
+    });
+</script>
+</body>
+</html>

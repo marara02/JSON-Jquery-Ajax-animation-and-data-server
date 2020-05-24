@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.3</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<p id ="p"></p>
+        <div class="form-group">
+            <div class="controls">
+                <input type="text" id="country" class="form-control" placeholder="Country">
+            </div>
+        </div>
+        <button type="submit" id="submit" class="btn btn-success"><i class="fa fa-check"></i>GET</button>
+</div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#submit').click(function(e){
+            e.preventDefault();
+
+            var country = $("#country").val();
+            var message = $("#message").val();
+
+            $.ajax({
+                type: "POST",
+                url: "1.php",
+                dataType: "json",
+                data: {country:country, message:message},
+                success : function(data){
+                    if (data.code == "200"){
+                        $("#p").text(data.msg);
+                    }
+                }
+            });
+
+        });
+    });
+</script>
+</html>

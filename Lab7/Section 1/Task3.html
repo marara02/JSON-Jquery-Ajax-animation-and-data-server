@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="Example-1.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function() {
+            var readerView = false;
+            $("#readerViewButton").click(function () {
+                if (readerView == false) {
+                    $('.header, .footer, .left, .right').animate({opacity:'0'},2000);
+                    readerView = true;
+                }
+                else {
+                    $('.header, .footer, .left, .right').animate({opacity:'1'},2000);
+                    readerView = false;
+                }
+            });
+        });
+
+        $(document).ready(function()
+        {
+            var readerView = false;
+            $("#stopButton").click(function()
+            {
+                if(readerView == false)
+                {
+                    $('.header, .footer, .left, .right').stop();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="full">
+    <div class="header">
+        <h1>website header</h1>
+    </div>
+    <div class="left">
+        <h1>website left part</h1>
+    </div>
+    <div class="main">
+        <h1>website main part</h1>
+        <div class="button1">
+            <input type="button" value ="reader view" id="readerViewButton">
+        </div> <div class='button 2'>
+        <input type="button" value="stop" id="stopButton">
+    </div>
+    </div>
+    <div class="right">
+        <h1>website right part</h1>
+    </div>
+    <div class="footer">
+        <h1>website footer</h1>
+    </div>
+</div>
+</body>
+<!--<script>
+    document.getElementById("readerViewButton").onclick = function() {readerView()};
+    var ReaderView = false;
+    function readerView()
+    {
+        if(ReaderView === false)
+        {
+            document.getElementsByClassName("header")[0].style.display = "none";
+            document.getElementsByClassName("footer")[0].style.display = "none";
+            document.getElementsByClassName("left")[0].style.display = "none";
+            document.getElementsByClassName("right")[0].style.display = "none";
+            document.getElementsByClassName("main")[0].style.height = "100%";
+            document.getElementsByClassName("main")[0].style.width = "100%";
+            ReaderView = true;
+        }
+        else
+        {
+            document.getElementsByClassName("header")[0].style.display = "block";
+            document.getElementsByClassName("footer")[0].style.display = "block";
+            document.getElementsByClassName("left")[0].style.display = "block";
+            document.getElementsByClassName("right")[0].style.display = "block";
+            document.getElementsByClassName("left")[0].style.height = "70%";
+            document.getElementsByClassName("right")[0].style.height = "70%";
+            document.getElementsByClassName("main")[0].style.height = "70%";
+            document.getElementsByClassName("main")[0].style.width = "60%";
+            ReaderView = false;
+        }
+    }
+</script>-->
+</html>

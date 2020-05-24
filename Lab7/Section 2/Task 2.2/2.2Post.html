@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GET and POST</title>
+</head>
+<body>
+<p id ='p'>here</p>
+<input type="button" value ="POST" id ="button"></body>
+<script>
+    document.getElementById('button').onclick = function () {
+        var request = new XMLHttpRequest();
+        request.open('POST','Task 2.2.php',true);
+        request.addEventListener('readystatechange',function () {
+            if((request.readyState == 4) && (request.status == 200)){
+                var paragraph = document.getElementById('p');
+                var sets = JSON.parse(request.responseText);
+                paragraph.innerHTML = sets['city'];
+            }
+        });
+        request.send();
+    }
+</script>
+<script
+        src = "https://code.jquery.com/jquery-3.5.1.js"
+        integrity = "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin = "anonymous">
+</script>
+</html>
+
+</body>
+</html>
